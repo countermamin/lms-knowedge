@@ -25,7 +25,9 @@ export const isAuthenticated = CatchAsyncError(
     const user = await redis.get(decoded.id);
 
     if (!user) {
-      return next(new ErrorHandler("Пользователь не найден", 400));
+      return next(
+        new ErrorHandler("Авторизуйтесь для доступа к этому ресурсу.", 400)
+      );
     }
 
     req.user = JSON.parse(user);

@@ -4,8 +4,7 @@ import bcrypt from "bcryptjs";
 import { StringLiteral } from "typescript";
 import jwt from "jsonwebtoken";
 
-const emailRegexPattern: RegExp =
-  /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailRegexPattern: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export interface IUser extends Document {
   name: string;
